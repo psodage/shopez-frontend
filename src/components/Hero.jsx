@@ -27,7 +27,7 @@ const Hero = () => {
   useEffect(() => {
     let isMounted = true;
     api
-      .get('/banners/hero')
+      .get('/api/banners/hero')
       .then((res) => {
         if (!isMounted) return;
         setHeroBanner(res.data?.banner || null);
