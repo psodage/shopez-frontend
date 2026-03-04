@@ -64,7 +64,7 @@ export const updateOffer = createAsyncThunk(
   'adminOffers/updateOffer',
   async ({ id, data }, { rejectWithValue }) => {
     try {
-      const res = await api.put(`/admin/offers/${id}`, data);
+      const res = await api.put(`/api/admin/offers/${id}`, data);
       return res.data;
     } catch (error) {
       const message =
@@ -80,7 +80,7 @@ export const deleteOffer = createAsyncThunk(
   'adminOffers/deleteOffer',
   async (id, { rejectWithValue }) => {
     try {
-      const res = await api.delete(`/admin/offers/${id}`);
+      const res = await api.delete(`/api/admin/offers/${id}`);
       return { id, message: res.data.message };
     } catch (error) {
       const message =

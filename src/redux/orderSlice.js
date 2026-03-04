@@ -93,7 +93,7 @@ export const updateOrderStatus = createAsyncThunk(
   'order/updateOrderStatus',
   async ({ id, data }, { rejectWithValue }) => {
     try {
-      const res = await api.put(`/admin/orders/${id}/status`, data);
+      const res = await api.put(`/api/admin/orders/${id}/status`, data);
       return res.data;
     } catch (error) {
       const message =
@@ -108,7 +108,7 @@ export const cancelOrder = createAsyncThunk(
   'order/cancelOrder',
   async (id, { rejectWithValue }) => {
     try {
-      const res = await api.put(`/orders/${id}/cancel`);
+      const res = await api.put(`/api/orders/${id}/cancel`);
       return res.data;
     } catch (error) {
       const message =
@@ -123,7 +123,7 @@ export const deleteOrder = createAsyncThunk(
   'order/deleteOrder',
   async (id, { rejectWithValue }) => {
     try {
-      await api.delete(`/admin/orders/${id}`);
+      await api.delete(`/api/admin/orders/${id}`);
       return id;
     } catch (error) {
       const message =

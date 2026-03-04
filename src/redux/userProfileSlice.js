@@ -27,7 +27,7 @@ export const updateProfile = createAsyncThunk(
   'userProfile/updateProfile',
   async (payload, { rejectWithValue }) => {
     try {
-      const res = await api.put('/users/profile', payload);
+      const res = await api.put('/api/users/profile', payload);
       return res.data;
     } catch (error) {
       const message =
@@ -42,7 +42,7 @@ export const changePassword = createAsyncThunk(
   'userProfile/changePassword',
   async (payload, { rejectWithValue }) => {
     try {
-      const res = await api.put('/users/change-password', payload);
+      const res = await api.put('/api/users/change-password', payload);
       return res.data;
     } catch (error) {
       const message =
@@ -72,7 +72,7 @@ export const updateAddress = createAsyncThunk(
   'userProfile/updateAddress',
   async ({ id, data }, { rejectWithValue }) => {
     try {
-      const res = await api.put(`/users/address/${id}`, data);
+      const res = await api.put(`/api/users/address/${id}`, data);
       return res.data.addresses;
     } catch (error) {
       const message =
@@ -87,7 +87,7 @@ export const deleteAddress = createAsyncThunk(
   'userProfile/deleteAddress',
   async (id, { rejectWithValue }) => {
     try {
-      const res = await api.delete(`/users/address/${id}`);
+      const res = await api.delete(`/api/users/address/${id}`);
       return res.data.addresses;
     } catch (error) {
       const message =

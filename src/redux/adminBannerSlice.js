@@ -64,7 +64,7 @@ export const updateBanner = createAsyncThunk(
   'adminBanners/updateBanner',
   async ({ id, data }, { rejectWithValue }) => {
     try {
-      const res = await api.put(`/admin/banners/${id}`, data);
+      const res = await api.put(`/api/admin/banners/${id}`, data);
       return res.data;
     } catch (error) {
       const message =
@@ -80,7 +80,7 @@ export const deleteBanner = createAsyncThunk(
   'adminBanners/deleteBanner',
   async (id, { rejectWithValue }) => {
     try {
-      const res = await api.delete(`/admin/banners/${id}`);
+      const res = await api.delete(`/api/admin/banners/${id}`);
       return { id, message: res.data.message };
     } catch (error) {
       const message =
@@ -96,7 +96,7 @@ export const toggleBannerStatus = createAsyncThunk(
   'adminBanners/toggleBannerStatus',
   async (id, { rejectWithValue }) => {
     try {
-      const res = await api.patch(`/admin/banners/${id}/toggle`);
+      const res = await api.patch(`/api/admin/banners/${id}/toggle`);
       return { id, ...res.data };
     } catch (error) {
       const message =

@@ -69,7 +69,7 @@ export const updateCategory = createAsyncThunk(
   'adminCategories/updateCategory',
   async ({ id, data }, { rejectWithValue }) => {
     try {
-      const res = await api.put(`/admin/categories/${id}`, data);
+      const res = await api.put(`/api/admin/categories/${id}`, data);
       return res.data;
     } catch (err) {
       const message =
@@ -86,7 +86,7 @@ export const deleteCategory = createAsyncThunk(
   async ({ id, hard }, { rejectWithValue }) => {
     try {
       const params = hard ? { hard: 'true' } : {};
-      const res = await api.delete(`/admin/categories/${id}`, { params });
+      const res = await api.delete(`/api/admin/categories/${id}`, { params });
       return { id, message: res.data?.message || 'Category deactivated.', deactivated: res.data?.deactivated };
     } catch (err) {
       const message =

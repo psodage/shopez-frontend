@@ -53,7 +53,7 @@ export const updateProduct = createAsyncThunk(
   'adminProducts/updateProduct',
   async ({ id, data }, { rejectWithValue }) => {
     try {
-      const res = await api.put(`/admin/products/${id}`, data);
+      const res = await api.put(`/api/admin/products/${id}`, data);
       return res.data;
     } catch (err) {
       const message =
@@ -69,7 +69,7 @@ export const deleteProduct = createAsyncThunk(
   'adminProducts/deleteProduct',
   async (id, { rejectWithValue }) => {
     try {
-      const res = await api.delete(`/admin/products/${id}`);
+      const res = await api.delete(`/api/admin/products/${id}`);
       return { id, message: res.data?.message || 'Product deleted.' };
     } catch (err) {
       const message =

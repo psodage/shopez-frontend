@@ -64,7 +64,7 @@ export const updateCoupon = createAsyncThunk(
   'adminCoupons/updateCoupon',
   async ({ id, data }, { rejectWithValue }) => {
     try {
-      const res = await api.put(`/admin/coupons/${id}`, data);
+      const res = await api.put(`/api/admin/coupons/${id}`, data);
       return res.data;
     } catch (error) {
       const message =
@@ -80,7 +80,7 @@ export const deleteCoupon = createAsyncThunk(
   'adminCoupons/deleteCoupon',
   async (id, { rejectWithValue }) => {
     try {
-      const res = await api.delete(`/admin/coupons/${id}`);
+      const res = await api.delete(`/api/admin/coupons/${id}`);
       return { id, message: res.data.message };
     } catch (error) {
       const message =
@@ -96,7 +96,7 @@ export const toggleCouponStatus = createAsyncThunk(
   'adminCoupons/toggleCouponStatus',
   async (id, { rejectWithValue }) => {
     try {
-      const res = await api.patch(`/admin/coupons/${id}/toggle`);
+      const res = await api.patch(`/api/admin/coupons/${id}/toggle`);
       return { id, ...res.data };
     } catch (error) {
       const message =

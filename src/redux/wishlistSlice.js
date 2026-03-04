@@ -101,7 +101,7 @@ export const removeWishlistItem = createAsyncThunk(
       return { localOnly: true, id };
     }
     try {
-      const res = await api.delete(`/wishlist/remove/${id}`);
+      const res = await api.delete(`/api/wishlist/remove/${id}`);
       return res.data;
     } catch (error) {
       const message =
